@@ -42,6 +42,7 @@ jobs:
             - name: Generate config
               run:  sh genconfig_foss.sh snapshot
 
+
             - name: Build firmware images
               run:  make -j$(($(nproc)+1)) world
             
