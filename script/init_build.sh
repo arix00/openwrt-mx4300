@@ -53,3 +53,5 @@ patch -p1 < mx4300.diff
 #fix for nss patch to handle both 24.10-snapshot and (tagged) release
 [ -f feeds.conf.default.rej ] && [ $type = "nss" ] && echo "src-git nss_packages https://github.com/qosmio/nss-packages.git;NSS-12.5-K6.x
 src-git sqm_scripts_nss https://github.com/qosmio/sqm-scripts-nss.git" >> feeds.conf.default && cat feeds.conf.default
+
+sed -i -e 's,git.openwrt.org/feed,github.com/openwrt,g; s,git.openwrt.org/project,github.com/openwrt,g' feeds.conf.default
