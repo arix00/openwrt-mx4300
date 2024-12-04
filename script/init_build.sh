@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash -ex -o pipefail
 
 type="foss"  #foss nss
 ver="snapshot" #snapshot or release#

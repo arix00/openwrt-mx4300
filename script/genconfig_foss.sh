@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash -ex -o pipefail
 
 
 if [ ! -z "$1" -a "$1" != "snapshot" ]; then

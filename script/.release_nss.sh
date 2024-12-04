@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash -ex -o pipefail
 
 mkdir kmods
 
