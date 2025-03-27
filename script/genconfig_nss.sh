@@ -14,7 +14,7 @@ else
   mainpath="https://downloads.openwrt.org/releases/$ver/targets/qualcommax/ipq807x"
 fi
 
-
+count=0
 if [ "${buildkmod}" != "n" ]; then
   jsonpath=$(wget ${mainpath}/sha256sums -O - | grep index.json -m 1 | cut -d '*' -f 2 | xargs)
   kmods=$(wget ${mainpath}/${jsonpath} -O - | jq '.packages' | grep \"kmod | cut -d '"' -f 2)
@@ -24,7 +24,9 @@ if [ "${buildkmod}" != "n" ]; then
   else
     kmods=$(echo "$kmods" | grep -v ath)
   fi
-  echo extra kmods: $(echo $kmods | wc -w)
+  count=$(echo $kmods | wc -w)
+  echo extra kmods: $count
+  if [ $count -lt 500 ]; then exit 1; fi
 fi
 
 cat nss-setup/config-nss.seed |  grep -v CONFIG_PACKAGE_luci >> .config
