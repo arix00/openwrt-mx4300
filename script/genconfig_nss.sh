@@ -16,7 +16,7 @@ fi
 
 count=0
 if [ "${buildkmod}" != "n" ]; then
-  jsonpath=$(wget ${mainpath}/sha256sums -O - | grep index.json -m 1 | cut -d '*' -f 2 | xargs)
+  jsonpath=$(wget ${mainpath}/sha256sums -O - | grep kmods.*index.json | tail -n 1 | cut -d '*' -f 2 | xargs)
   kmods=$(wget ${mainpath}/${jsonpath} -O - | jq '.packages' | grep \"kmod | cut -d '"' -f 2)
   #fix dependency for 24.10 branch
   if [ "$ver" != "${ver#24.10}" ]; then
