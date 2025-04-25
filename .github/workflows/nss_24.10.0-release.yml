@@ -1,4 +1,4 @@
-name: build nss 24.10.0 release
+name: build nss 24.10.1 release
 on:
   workflow_dispatch:
       
@@ -16,7 +16,7 @@ jobs:
         "BUILD_BRANCH": "build",
         "BUILD_INIT": "init_build.sh",
         "BUILD_TYPE":  "nss",
-        "BUILD_VER": "24.10.0",
-        "BUILD_TAG": "1fad1b4",
+        "BUILD_VER": "24.10.1",
+        "BUILD_TAG": "d183d7b",
         "BUILD_SYNC": "y",
         "BUILD_KMOD": "y"}'
