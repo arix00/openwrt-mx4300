@@ -82,6 +82,10 @@ if [ $type = "nss" ]; then
       echo "##keep upstream include/kernel-6.6"
       rm include/kernel-6.6.rej
   fi
+  if [ -f "package/kernel/nat46/Makefile.rej" ]; then
+      echo "##ignore version mismatch"
+      rm package/kernel/nat46/Makefile.rej
+  fi
 fi
 
 #err exit with unhandled failed patch
