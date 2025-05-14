@@ -34,6 +34,8 @@ echo "
 CONFIG_TARGET_qualcommax_ipq807x_DEVICE_linksys_mx4300=y
 CONFIG_PACKAGE_luci=y
 CONFIG_FEED_nss_packages=n
+CONFIG_FEED_sqm_scripts_nss=n
+CONFIG_PACKAGE_sqm-scripts-nss=y
 " >> .config
 make defconfig
 
