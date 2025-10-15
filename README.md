@@ -1,3 +1,9 @@
+## Notice
+My MX4300 Wifi burnt out one night when only few iot devices were connected. 
+So I'm no longer working on this device. 
+This repo will be archived.
+
+
 ## About
 
 This is for Linksys LN1301/MX4300 router ~~as [no official support](https://github.com/openwrt/openwrt/pull/16070) in OpenWrt yet~~. 
